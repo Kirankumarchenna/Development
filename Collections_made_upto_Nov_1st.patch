@@ -1,0 +1,263 @@
+Index: .idea/sonarlint/issuestore/index.pb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+--- a/.idea/sonarlint/issuestore/index.pb	(revision 0e6918aecef4a3e9193efa0a1bc511278f7c2336)
++++ b/.idea/sonarlint/issuestore/index.pb	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -1,0 +1,5 @@
++
++_
++/src/main/java/com/java/Mocking/UserService.java,7\1\718ac54b297c65471988d233109a1915c2eceb25
++[
+++src/main/java/com/java/Mocking/UserDao.java,1\1\114247b2fa7bb08f01beb35d0508057ad5d5eaec
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/.idea/vcs.xml	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/com/java/collection/ArrayListDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/java/collection/ArrayListDemo.java b/src/main/java/com/java/collection/ArrayListDemo.java
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/src/main/java/com/java/collection/ArrayListDemo.java	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,51 @@
++package com.java.collection;
++
++import java.io.Serializable;
++import java.util.*;
++
++public class ArrayListDemo {
++    public static void main (String[] args){
++        ArrayList l = new ArrayList();
++        l.add("K");
++        l.add(10);
++        l.add("k");
++        l.add(10);
++        l.add(null);
++        System.out.println(l);
++        l.remove(2);
++        System.out.println(l);
++        l.add(2,"M");
++        System.out.println(l);
++        l.add("N");
++        System.out.println(l);
++
++        System.out.println();
++
++        ArrayList list = new ArrayList();
++        Vector v = new Vector();
++        v.add(0, "kiran");
++        System.out.println(v);
++        LinkedList linkedList = new LinkedList();
++        System.out.println(list instanceof Serializable);
++        System.out.println(linkedList instanceof Cloneable);
++        System.out.println(list instanceof RandomAccess);
++        System.out.println(linkedList instanceof RandomAccess);
++
++        ArrayList l1 = new ArrayList();         //Non Synchronized
++        List l2 = Collections.synchronizedList(l1); //Synchronized
++
++        System.out.println("--------------------------------");
++        /**
++         * Below I have used iterator cursor to iterator Cursor to retrieve the elements
++         * int the collection
++         */
++        ArrayList l3 = new ArrayList();
++        for(int i=0; i<=10; i++){
++            l3.add(i);
++        }
++        Iterator itr = l3.iterator();
++        while(itr.hasNext()){
++            System.out.println(itr.next());
++        }
++    }
++}
+Index: src/main/java/com/java/collection/CursorEnumeration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/java/collection/CursorEnumeration.java b/src/main/java/com/java/collection/CursorEnumeration.java
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/src/main/java/com/java/collection/CursorEnumeration.java	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,29 @@
++package com.java.collection;
++
++import java.util.Enumeration;
++import java.util.Vector;
++
++public class CursorEnumeration {
++    public static void main(String[] args) {
++        Vector v = new Vector();
++        for(int i=0; i<=10; i++){
++            v.addElement(i);
++        }
++        System.out.println(v);
++        /**
++         * So here this will print all the objects at a time which are present in Vector as we
++         * added int vector by using loops
++         * Note: So we don't need all the elements at a time, we need to retrieve the elements one by one
++         *       using Cursors.
++         *       So, below I have used Enumeration cursor
++         */
++        Enumeration e = v.elements();
++        while (e.hasMoreElements()){
++            Integer i =(Integer) e.nextElement();
++            if(i%2==0){
++                System.out.println(i);
++            }
++        }
++
++    }
++}
+Index: src/main/java/com/java/collection/CursorIterator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/java/collection/CursorIterator.java b/src/main/java/com/java/collection/CursorIterator.java
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/src/main/java/com/java/collection/CursorIterator.java	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,34 @@
++package com.java.collection;
++
++import java.util.ArrayList;
++import java.util.*;
++
++public class CursorIterator {
++    public static void main(String[] args) {
++        List list = new ArrayList();
++        for(int i=1; i<=10; i++) {
++            list.add(i);
++        }
++        System.out.println("This is the entire List collection: "+list);
++        Iterator itr = list.iterator();
++        while (itr.hasNext()){
++            Integer j = (Integer) itr.next();
++           /* System.out.println(j);
++               if(j>=5){
++                    break;
++               }*/
++            if(j%2==0){
++                if(j==6){
++                    itr.remove();
++                } else {
++                    System.out.println(j);
++                }
++            } else {
++                itr.remove();
++                /*
++                    so here this remove method removes all the odd numbers
++                 */
++            }
++        }
++    }
++}
+Index: src/main/java/com/java/collection/LinkedListDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/java/collection/LinkedListDemo.java b/src/main/java/com/java/collection/LinkedListDemo.java
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/src/main/java/com/java/collection/LinkedListDemo.java	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,21 @@
++package com.java.collection;
++
++import java.util.LinkedList;
++
++public class LinkedListDemo {
++    public static void main(String[] args) {
++        LinkedList l = new LinkedList();
++        l.add("Kiran");
++        l.add(40);
++        l.add(null);
++        System.out.println(l);
++        l.set(1,"Kumar");
++        System.out.println(l);
++        l.add(2, "Chenna");
++        System.out.println(l);
++        l.removeLast();
++        System.out.println(l);
++        l.addFirst("Samuel");
++        System.out.println(l);
++    }
++}
+Index: src/main/java/com/java/collection/StackDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/java/collection/StackDemo.java b/src/main/java/com/java/collection/StackDemo.java
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/src/main/java/com/java/collection/StackDemo.java	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,19 @@
++package com.java.collection;
++
++import java.util.Stack;
++
++public class StackDemo {
++    public static void main(String[] args) {
++        Stack stack = new Stack();
++        stack.push("A");
++        stack.push("B");
++        stack.push("C");
++
++        System.out.println(stack);
++        System.out.println(stack.search("B"));
++        System.out.println(stack.search("A "));
++        System.out.println(stack.search("C"));
++        System.out.println(stack.empty());
++
++    }
++}
+Index: src/main/java/com/java/collection/VectorDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/java/collection/VectorDemo.java b/src/main/java/com/java/collection/VectorDemo.java
+new file mode 100644
+--- /dev/null	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
++++ b/src/main/java/com/java/collection/VectorDemo.java	(revision a305a8ff85f54f00758ac423d8d009fbfea96a16)
+@@ -0,0 +1,17 @@
++package com.java.collection;
++
++import java.util.Vector;
++
++public class VectorDemo {
++    public static void main(String[] args){
++        Vector v = new Vector();
++        System.out.println(v.capacity());   
++        for(int i=1; i<=10; i++){
++            v.addElement(i);
++        }
++        System.out.println(v.capacity());
++        v.addElement("K");
++        System.out.println(v.capacity());
++        System.out.println(v);
++    }
++}
