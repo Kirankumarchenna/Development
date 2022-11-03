@@ -24,6 +24,6 @@ public class CursorEnumeration {
                 System.out.println(i);
             }
         }
-
+        System.out.println(e.getClass().getName());
     }
 }
