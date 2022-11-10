@@ -1,8 +1,5 @@
 package com.java.collection;
 
-import sun.reflect.generics.tree.Tree;
-
-import javax.jws.Oneway;
 import java.util.Comparator;
 import java.util.TreeSet;
 
@@ -24,6 +21,13 @@ public class ComparatorDemoWithTreeSet {
         t1.add("Rajini");
         t1.add("Achiyamma");
         System.out.println(t1);
+
+        TreeSet t2 = new TreeSet(new MyComparator2());
+        t2.add(new StringBuffer("K"));
+        t2.add(new StringBuffer("J"));
+        t2.add(new StringBuffer("A"));
+        t2.add(new StringBuffer("S"));
+        System.out.println(t2);
     }
 }
 
@@ -47,6 +51,14 @@ class MyComparator implements Comparator{
 class MyComparator1 implements Comparator{
     public int compare(Object obj1, Object obj2){
         String s1 = (String) obj1;
+        String s2 = obj2.toString();
+        return s1.compareTo(s2);
+    }
+}
+
+class MyComparator2 implements  Comparator{
+    public int compare(Object obj1, Object obj2){
+        String s1 = obj1.toString();
         String s2 = obj2.toString();
         return s1.compareTo(s2);
     }
