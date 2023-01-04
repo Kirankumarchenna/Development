@@ -13,10 +13,12 @@ public class ThreadWaitState {
         synchronized (key) {
             for (int i=0;i<=10;i++){
                 System.out.print(i);
+                System.out.println();
                 System.out.println(thread.getState());
                 try {
                     while (i==5){
                         key.wait();
+                        System.out.println(thread.getState());
                     }
                 } catch (InterruptedException e){
                     Thread.currentThread().interrupt();

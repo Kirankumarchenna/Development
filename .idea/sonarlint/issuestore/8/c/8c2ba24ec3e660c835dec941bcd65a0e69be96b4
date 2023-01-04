@@ -1,0 +1,12 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(Û±ñ„
+E
+java:S3740"/Provide the parametrized type for this generic.(Û±ñ„
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¦¨¹
+S	java:S106"9Replace this use of System.out or System.err by a logger.(³¾†ûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(———åúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(••¨úÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ˆÆñ“
+O
+java:S2121"9Remove this "compareTo" call; it has predictable results.(ˆÆñ“
