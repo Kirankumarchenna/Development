@@ -1,4 +1,4 @@
-package com.java.collection;
+package com.java.Generics;
 
 public class Gen<T>{
     T obj;
