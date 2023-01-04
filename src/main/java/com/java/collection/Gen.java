@@ -16,5 +16,13 @@ public class Gen<T>{
         Gen<String> gen = new Gen<String>("Generic");
         gen.show();
         System.out.println("The value which is present in the object obj is: "+gen.getObj());
+
+        Gen<Double> gen1 = new Gen<Double>(10.6);
+        gen1.show();
+        System.out.println("The value which is present in the object obj is: "+gen1.getObj());
+
+        Gen<Integer> gen2 = new Gen<>(89);
+        gen2.show();
+        System.out.println("The value which is present in the object obj is: "+gen2.getObj());
     }
 }
